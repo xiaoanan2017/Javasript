@@ -11,4 +11,12 @@ function changeImage(){
 	else{
 		img1.src="img/p1.jpg";
 	}
-}
+};
+function isNum(){
+	var num=document.getElementsByTagName("input")[0].value;
+	if(num==""||isNaN(num)){
+		alert("不是数字");
+	}else{
+		alert("是数字");
+	}
+};

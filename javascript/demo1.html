@@ -10,6 +10,52 @@
 		<button type="button" onclick="displayDate()">显示日期</button><br/>
 		<button type="button" onclick="displayDate()">显示日期2</button>
 		<a href="javascript:alert('清除成功')">清除缓存</a><br/>
-		<img id="img1" onclick="changeImage()" src="img/p2.jpg" width="100" height="180">
+		<img id="img1" onclick="changeImage()" src="img/p2.jpg" width="100" height="180"><br/>
+		<input type="text"/><button onclick="isNum()">是否为数字</button>
+		<h2>JavaScript 显示数据</h2>
+		<ul>
+		<li>使用window.alert()弹出警告框<button onclick="u1()">u1</button></li>	
+		<li>使用 document.write()方法将内容写到HTML文档中<button onclick="u2()">u2</button></li>
+		<li>使用innerHTML写入到HTML元素<button onclick="u3()">u3</button></li>
+		<li>使用 console.log()写入浏览器的控制台<button onclick="u4()">u4</button></li>
+		</ul>
+		<button onclick="u5()">u5</button>
+		<script>
+			function u1(){
+				var a=5
+				var a//重新声明a，但是a的值不会丢失
+				var b='VOVOL'
+				var c='a',d='f'//一行声明多个变量
+				//写不写分号都无所谓
+				//return;退出函数
+			<!--
+			window.alert(a+b+c+d);
+			-->
+			};
+			function u2(){
+				document.getElementsByTagName("h2")[0].innerHTML="javaScript 数据已经改变";
+			};
+			function u3(){
+				window.write("所有页面内容被覆盖");
+			};
+			function u4(){
+				console.log("内容输出到控制台");
+			}
+			function u5(){
+				//javascript对象
+				var person={
+					firstname:"肖安安",
+					lastname:'bb'
+					
+				}
+				var a;
+				var b=null;
+				var c=new Number;
+				alert("a:"+a);
+				alert("b:"+b);
+				alert("c:"+c);
+				alert(person.firstname);
+			}
+		</script>
 	</body>
 </html>
