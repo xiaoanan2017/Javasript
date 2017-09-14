@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>javascript变量提升</title>
+	</head>
+	<body>
+		<h3>Javascript变量提升</h3>
+		<ul>
+			<li>函数及变量的声明都将被提升到函数的最顶部</li>
+			<li>变量可以在使用后声明，也就是变量可以先使用再声明</li>
+		</ul>
+		<script>
+			"use strict";
+			f2();			
+			function f2(){			
+				x=3.14;		
+			}
+				"use strict";
+	myFunction();
+	function myFunction() {
+    y = 3.14;   // 报错 (y 未定义)
+}
+	</script>
+	</body>
+</html>

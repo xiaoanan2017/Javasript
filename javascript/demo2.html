@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>Javascript对象</h1>
+		<ul>
+			<li>javascript对象方法</li>
+		</ul>
+		<script>
+			var person={
+				name:'anan',
+				sex:"男",
+				method:function()
+				{
+					return this.name+" "+this.sex;
+				}
+			};
+			document.write("<h1>对象的属性是一个方法：不加括号的输出"+person.method+"</h1>");
+			document.write("<h1>加括号的输出： "+person.method()+"</h1>");
+			document.write("<h1>加括号的输出： "+person['method']+"</h1>");
+			var people=new Object();
+			people.name='hello';
+			people.sex='男';
+			document.write(people.name);
+		</script>
+	</body>
+</html>

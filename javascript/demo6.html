@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则表达式</title>
+	</head>
+	<body>
+		<h1>正则表达式</h1>
+		<script type="text/javascript">
+			var str="Visit Runoob!";
+			var n1=str.search(/runoob/i);//返回匹配字符串的起始位置 i执行对大小写不敏感的匹配
+			var n2=str.replace(/isit/,"哈哈")
+			document.write(n1+'<br>');
+			document.write(n2+'<br>');
+			var patt=/e/;
+			var test1=patt.test("the issajdhjas");//检查“the is...”中是否有 patt- e这个字符串
+			document.write(test1+'<br>');
+			var test2=patt.exec("ethdsada");//搜索 e,返回一个数组
+			document.write(test2[0]+'<br>');
+			var isE=/^[a-zA-Z]+$/.test("aaa1");
+			debugger;
+			document.write(isE+'<br>');
+		</script>
+	</body>
+</html>

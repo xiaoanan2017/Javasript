@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>多选框全选或取消全选</h2>
+		看书：<input type="checkbox" name="interest"><br/>
+		睡觉：<input type="checkbox" name="interest"><br/>
+		游泳：<input type="checkbox" name="interest"><br/>
+		打球：<input type="checkbox" name="interest"><br/>
+		<button onclick="checks('input',this)" style="width:80px">全选</button><br/>
+		<button onclick="alert()">覆盖</button>
+		<!--<button onclick="checks2(this)">全选</button>-->
+		<script>
+			function checks(objName,e){
+				var obj=document.getElementsByTagName(objName);
+				if(null!=obj){
+					if(e.innerHTML.match("取消")){
+					for(var i=0;i<obj.length;i++)					
+						obj[i].checked="";
+					e.innerHTML="全选";
+							//objName2.innerHTML="取消全选";
+					}else{
+						for(var i=0;i<obj.length;i++)	
+							obj[i].checked="checked";
+						e.innerHTML="取消全选";
+						}
+					}
+				}
+			function checks2(e){
+				e.innerHTML="取消全选";
+			}
+			function alert(){
+				var e=document.getElementsByTagName("button")[1];
+				e.innerHTML="已覆盖window函数，也就是重写";
+			}
+		</script>
+	</body>
+</html>

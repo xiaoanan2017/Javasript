@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a="abcdefg";
+			var b=" 12345asFsdssd ";
+			var c="0123456";
+			document.write(a.valueOf()+'<br/>');//返回字符串对象的原始值
+			document.write(b.trim()+'<br/>');//移除字符串首尾空白
+			document.write(b.toUpperCase()+'<br/>');//转换为大写
+			document.write(b.toLowerCase()+'<br/>');//转换为小写
+			document.write(b.substring(1,3)+'<br/>');//截取字符串中指定索引之间的字符，含头不含尾
+			document.write(c.substr(3)+'<br>');//从指定索引号开始到尾 截取字符串
+			document.write(b+'<br>');
+			document.write(b.concat(c)+'<br>');//连接字符串，另外javascript会忽略多余的空格，所以前面的空格没了
+			document.write(c.indexOf("3")+'<br>');//返回指定字符出现的位置3
+			document.write(c.indexOf("34")+'<br>');//返回指定字符串出现的位置3，如果没有则返回-1
+			document.write(c.match("1234")+'<br>');//匹配字符串,如果有则返回字符串，没有则返回null
+			var d=1;
+			var d1=true;
+			var d2=false;
+			var d11=d+d1;//将 true转换为1,结果2
+			var d22=d+d2;//将false转换为0，结果1
+			document.write(d11+'<br>');
+			document.write(d22+'<br>');
+			var f1=7%3; //结果1
+			var f2=(-7)%3;//结果-1
+			var f3=7%(-3);//结果1 取模只与左边的数值的+ -有关
+			document.write("f1: "+f1+" f2:"+f2+" f3:"+f3+'<br>');
+			var g=new Date().getDay();
+			switch(g){//找到符合g的，从该case往下执行，所以一般要加break
+				case 0:
+					x="星期日";break;
+				case 1:
+					x="星期1";break;
+				case 2:
+					x="星期2";break;
+				case 3:
+					x="星期3";break;
+				case 4:
+					x="星期4";break;
+				case 5:
+					x="星期5";break;
+				default:
+					x="不存在的";
+			}
+			document.write(x+'<br>');
+			var person={fname:"John",lname:"Doe",age:25}; 
+			var txt="";
+			for (s in person)//for in循环
+			{
+    			var txt=txt + person[s];
+			}
+			document.write(txt+'<br>');
+			cars=["BMW","volvo","Saab","Ford"];
+			list:{
+				document.write(cars[0]+" ");
+				document.write(cars[1]+" ");
+				break list;//跳出代码块，break 不带标签时，只能用在循环或switch中；带标签后，跳出任何代码块
+						//continue，不论带不带标签，都只能在循环里
+				document.write(cars[2]+" ");
+			}
+			document.write('<br>');
+			document.write(cars[0]+" ");
+			document.write(cars[1]+" ");
+			document.write(cars[2]+" ");
+		</script>
+		<ul>
+			<li><h2>没有引用的对象值为null</h2></li>
+			<li><h2>没有值的变量是undefinded</h2></li>
+			<li><h2>undefinded与null值相等（==为true），类型不相等（===为false）</h2></li>
+		</ul>
+	</body>
+</html>

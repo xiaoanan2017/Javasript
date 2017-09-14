@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>声明函数</h1>
+		<button onclick="f2(this.innerHTML,12)">点击</button>
+		计数器1：<button ></button><br/>
+		<button onclick="f1(this.innerHTML,12)">点击</button>
+		计算器2：<button ></button>
+		<button onclick="f3()">点击</button>
+		<script>
+			var a=0;//局部外声明的是全局变量
+			function f1(){//不带参数的函数
+				var b;//函数内部声明的是局部变量
+				
+				document.getElementsByTagName("button")[3].innerHTML=c;
+			}
+			function f2(var1,var2){//带参数的函数，直接写变量名
+				alert(var1+var2);
+				a++;
+				c++;
+				document.getElementsByTagName("button")[1].innerHTML=a;
+			}
+			function f3(){
+				c=0;//把值赋值给尚未声明的变量，该变量将被自动作为全局变量，即使在函数内
+			}
+		</script>
+	</body>
+</html>
