@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>1111</p>
+		<p>22222</p>
+		<script>
+			var para=document.createElement("p");//创建p
+			var node=document.createTextNode("3333");//创建p的文本内容
+			para.appendChild(node);//将p的文本添加到p里
+			document.body.appendChild(para);//将p 追加到 body里
+			
+			var para1=document.getElementsByTagName("p")[0];//获取第一个p
+			document.body.removeChild(para1);//从父节点中，删除子节点
+		</script>
+	</body>
+</html>

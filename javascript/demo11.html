@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹窗、确认框、提示框</title>
+	</head>
+	<body>
+		<button >确认框</button><br>
+		<button>提示框</button><br/>
+		现在时间：<h1></h1>
+		<script>
+			document.getElementsByTagName("button")[0].addEventListener("click",
+		function(){
+			var r=confirm("是否确认？");
+			if(r==true){//按下了，则返回值的 true
+				
+			}else{
+				
+			}
+		});//用监听的办法来绑定事件
+		document.getElementsByTagName("button")[1].onclick=function(){
+			var person = prompt("请输入您的姓名","ss");
+			if(person!=null&&person!=""){//返回值是person这个对象，对象里是输入框的内容
+				console.log(person);
+			}
+		};
+		setInterval(
+			function(){
+				document.getElementsByTagName("h1")[0].innerHTML=new Date().toLocaleTimeString();
+			},1000
+		);
+		</script>
+	</body>
+</html>

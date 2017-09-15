@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Json</title>
+	</head>
+	<body>
+		<h1>为JSON字符串创建对象</h1>
+		<p></p>
+		<p></p>
+		<h1>JavaScript:void(0)</h1>
+		<ul>
+			<li>avascript:void(0) 中最关键的是 void 关键字</li>
+			<li></h1>void 是 JavaScript 中非常重要的关键字，<u style="color:red">该操作符指定要计算一个表达式但是不返回值。</h1></li>
+			<li>href="#"默认的锚是#top也就是网页上端</li>
+			<li>javascript:void(0),仅仅表示一个死链接</u></li>
+		</ul>
+		<a href="javascript:void(alert('执行操作但不需要返回值'))">点我!</a><br>
+		<script>
+			var text='{"sites":['+
+					'{"name":"Runoob","url":"www.runoob.com"},'+
+					'{"name":"Google","url":"www.Google.com"},'+
+					'{"name":"taobao","url":"www.taobao.com"}]}';
+			obj=JSON.parse(text);//将JSON字符串转换为JavaScript对象
+			document.getElementsByTagName("p")[0].innerHTML=obj.sites[0].url;
+			
+			var str={"name":"菜鸟教程","site":"http://www.runoob.com"};
+			var str1=["name","aa"];
+			str_pretty1=JSON.stringify(str,str1,4);//将javascript对象转换为JSON
+			document.write( "只有一个参数情况：" );
+			document.write( "<br>" );
+			document.write("<pre>" + str_pretty1 + "</pre>" );
+			document.write( "<br>" );			
+			var x = findMax(1,5,6);
+			function findMax(){
+				 var i, max = arguments[0];//arguments数组是 函数内置的对象，所以未声明参数也可以使用
+    			if(arguments.length < 2) return max;
+    				for (i = 0; i < arguments.length; i++) {
+        			if (arguments[i] > max) {
+           				 max = arguments[i];
+        			}
+    			}
+   			 return max;	
+			}
+			document.getElementsByTagName("p")[1].innerHTML=x;
+		</script>
+		
+	</body>
+</html>

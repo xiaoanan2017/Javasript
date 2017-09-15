@@ -5,10 +5,21 @@
 		<title>表单验证</title>
 	</head>
 	<body>
-		<form name="myForm" action="demo8.html" onsubmit="return validDateForm()" method="post">
+		<form name="myForm" action="#" onsubmit="return validDateForm()" method="post">
 			名字：<input type="text" name="fname" />
 			<input type="submit" value="提交"/>
 		</form>
+		<form action="#" method="post">
+			请输入姓名<input type="text" name="fname1" required="required">
+			<!--如果fname1 字段的值为空，required属性会阻止表单提交-->
+			<input type="submit" value="提交">
+		</form>
+		<form name="fname2" action="#" autocomplete="on" onsubmit="return validEmail();" method="post">
+  		Num:<input type="number" name="num1" min="100" max="500"><button onclick="numv()">验证</button><br>
+  		Tel: <input type="text" name="tel"><br>
+  		E-mail: <input type="text" name="email" autocomplete="off"><br>
+  <input type="submit">
+</form>
 		<script>
 			function validDateForm(){
 				var x=document.forms["myForm"]['fname'].value;
@@ -18,6 +29,37 @@
 					return false;
 				}
 					
+			}
+			function validEmail(){
+				var email=document.forms['fname2']['email'].value;
+				var tel=document.forms['fname2']['tel'].value;				
+				console.log(email);
+				console.log(tel);
+				//var patt=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+				var patt=/^\w+@[0-9a-zA-Z]+\.\w+$/;
+				var patt1=/^1[0-9]{10}$/;
+				if(patt1.test(tel)){
+					console.log("电话号码合法");
+					//return false;
+				}
+				else{
+					console.log("电话号码不合法");
+					//return false;
+				}
+				
+				if(patt.test(email)){
+					console.log("邮箱合法！");
+					return false;
+				}else{
+					alert("邮箱不合法");
+					return false;
+				}
+			}
+			function numv(){
+				var num1=document.forms['fname2']['num1'];
+				if(num1.checkValidity()==false){
+					console.log(num1.validationMessage);
+				}
 			}
 		</script>
 	</body>
